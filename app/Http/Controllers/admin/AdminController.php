@@ -23,6 +23,21 @@ class AdminController extends Controller
         $admin = new Admin;
         $admin->name = $request->name;
         $admin->email = $request->email;
+        if(!$request->has('p_admin')){
+            $admin->p_admin = 0;
+        }else{
+            $admin->p_admin = 1;
+        }
+        if(!$request->has('p_purchase')){
+            $admin->p_purchase = 0;
+        }else{
+            $admin->p_purchase = 1;
+        }
+        if(!$request->has('p_course')){
+            $admin->p_course = 0;
+        }else{
+            $admin->p_course = 1;
+        }
         $admin->password = bcrypt($request->password);
         $admin->save();
         return redirect()->route('get.admin.index')->with('success','تم اضافة المشرف بنجاح');
@@ -42,6 +57,21 @@ class AdminController extends Controller
         $admin = Admin::find($id);
         $admin->name = $request->name;
         $admin->email = $request->email;
+        if(!$request->has('p_admin')){
+            $admin->p_admin = 0;
+        }else{
+            $admin->p_admin = 1;
+        }
+        if(!$request->has('p_purchase')){
+            $admin->p_purchase = 0;
+        }else{
+            $admin->p_purchase = 1;
+        }
+        if(!$request->has('p_course')){
+            $admin->p_course = 0;
+        }else{
+            $admin->p_course = 1;
+        }
         if(!empty($request->password)){
             $admin->password = bcrypt($request->password);
         }

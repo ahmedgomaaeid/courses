@@ -29,6 +29,8 @@
                                                             <ul class="nav panel-tabs product-sale">
                                                                 <li><a href="{{route('get.admin.lesson.create')}}" class="active"
                                                                         >اضافة درس</a></li>
+                                                                <li><a href="{{route('get.admin.quiz.create')}}" class="active"
+                                                                        >اضافة اختبار</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -46,6 +48,9 @@
                                                                                 <th
                                                                                     class="bg-transparent border-bottom-0">
                                                                                     الكورس</th>
+                                                                                <th
+                                                                                    class="bg-transparent border-bottom-0">
+                                                                                    النوع</th>
                                                                                 <th
                                                                                     class="bg-transparent border-bottom-0">
                                                                                     الحالة</th>
@@ -73,7 +78,17 @@
                                                                                                 class="mt-0 mt-sm-3 d-block">
                                                                                                 <h6
                                                                                                     class="mb-0 fs-14 fw-semibold">
-                                                                                                        {{$lesson->course->name}}</h6>
+                                                                                                        {{$lesson->course->name}} / {{$lesson->course->steacher->name}}</h6>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="d-flex">
+                                                                                            <div
+                                                                                                class="mt-0 mt-sm-3 d-block">
+                                                                                                <h6
+                                                                                                    class="mb-0 fs-14 fw-semibold">
+                                                                                                        {{$lesson->type}}</h6>
                                                                                             </div>
                                                                                         </div>
                                                                                     </td>
@@ -94,8 +109,21 @@
                                                                                     <div class="g-2">
                                                                                         <a class="btn text-primary btn-sm"
                                                                                             data-bs-toggle="tooltip"
-                                                                                            data-bs-original-title="Edit" href="{{route('get.admin.lesson.edit',$lesson->id)}}"><span
+                                                                                            data-bs-original-title="Edit" href="
+                                                                                            @if($lesson->type == 'درس')
+                                                                                                {{route('get.admin.lesson.edit', $lesson->id)}}
+                                                                                            @else
+                                                                                                {{route('get.admin.quiz.edit', $lesson->id)}}
+                                                                                            @endif
+                                                                                            
+                                                                                            "><span
                                                                                                 class="fe fe-edit fs-14"></span></a>
+                                                                                        @if($lesson->type == 'اختبار')
+                                                                                            <a class="btn text-primary btn-lg"
+                                                                                            data-bs-toggle="tooltip"
+                                                                                            data-bs-original-title="question" href="{{route('get.admin.question', $lesson->id)}}"><span
+                                                                                                class="mdi mdi-alphabetical"></span></a>
+                                                                                        @endif
                                                                                     </div>
                                                                                 </td>
                                                                             @endforeach

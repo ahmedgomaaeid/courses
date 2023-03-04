@@ -18,4 +18,20 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+    # RewriteCond = define rule condition
+# HTTP_REFERER = check from where the request originated
+# ! = exclude
+# ^ = start of string
+# [NC] = case insensitive search
+RewriteCond %{HTTP_REFERER} !^http://localhost/study [NC]
+ 
+# \ = match any
+# . = any character
+# () = pattern, group
+# $ = end of string
+ 
+# [F] = forbidden, 403
+# [L] = stop processing further rules
+RewriteRule \.(gif|jpg|jpeg|png|mp4|mov|mkv|flv)$ - [F,L]
+
 </IfModule>

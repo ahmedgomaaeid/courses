@@ -53,7 +53,9 @@ class StudentController extends Controller
         $student->email = $request->email;
         $student->phone = $request->phone;
         if($request->hasFile('photo')){
-            unlink('assets/images/students/' . $student->photo);
+            if($student->photo != ''){
+                unlink('assets/images/students/' . $student->photo);
+            }
             $file_extension = $request->file('photo')->getClientOriginalExtension();
             $file_name = time() . '.' . $file_extension;
             $request->file('photo')->move('assets/images/students', $file_name);

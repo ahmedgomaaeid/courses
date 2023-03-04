@@ -102,6 +102,15 @@
                                                         </label>
                                                 </div>
                                         </div>
+                                        <div class="row mb-4">
+                                            <label class="col-md-3 form-label">صلاحية عمل يث مباشر:</label>
+                                                <div class="form-group">
+                                                    <label class="custom-switch form-switch mb-0">
+                                                            <input type="checkbox" name="live_access" value="1" class="custom-switch-input">
+                                                            <span class="custom-switch-indicator custom-switch-indicator-md"></span>
+                                                        </label>
+                                                </div>
+                                        </div>
                                         
                                     <div class="card-footer">
                                         <!--Row-->

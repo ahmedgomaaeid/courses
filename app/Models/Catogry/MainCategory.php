@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class MainCategory extends Model
 {
     protected $fillable = [
-        'name', 
+        'name', 'photo'
     ];
+    public function getStatusAttribute($value)
+    {
+        return $value == 1 ? 'مفعل' : 'غير مفعل';
+    }
 }

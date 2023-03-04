@@ -26,6 +26,7 @@ class SubCategoryRequest extends FormRequest
         return [
             'name' => 'required|max:255',
             'main_category_id' => 'required',
+            'photo' => 'required|image|mimes:jpg,jpeg,png,gif'
         ];
     }
 
@@ -35,6 +36,9 @@ class SubCategoryRequest extends FormRequest
             'name.required' => 'هذا الحقل مطلوب',
             'name.max' => 'الحد الاقصى للحروف 255',
             'main_category_id.required' => 'هذا الحقل مطلوب',
+            'photo.required' => 'هذا الحقل مطلوب',
+            'photo.image' => 'هذا الحقل يجب ان يكون صورة',
+            'photo.mimes' => 'هذا الحقل يجب ان يكون من نوع jpg,jpeg,png,gif',
         ];
     }
 }

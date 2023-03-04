@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 
 <head>
 
@@ -30,7 +30,7 @@
 
 </head>
 
-<body class="app sidebar-mini ltr">
+<body class="app sidebar-mini rtl">
 
     <!-- BACKGROUND-IMAGE -->
     <div class="login-img">
@@ -86,6 +86,9 @@
 
     <!-- CUSTOM JS -->
     <script src="{{route('index')}}/assets/js/custom.js"></script>
+        <!-- FILE UPLOADES JS -->
+    <script src="{{route('index')}}/assets/plugins/fileuploads/js/fileupload.js"></script>
+    <script src="{{route('index')}}/assets/plugins/fileuploads/js/file-upload.js"></script>
 
 </body>
 

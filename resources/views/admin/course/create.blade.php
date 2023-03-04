@@ -45,12 +45,35 @@
                                             <label class="col-md-3 form-label">سعر الكورس :</label>
                                             <div class="input-group col-md-9">
                                                 <span class="input-group-text"><i class="fa fa-shekel"></i></span>
-                                                <input type="text" class="form-control br-0" name="price" placeholder="سعر الكورس" aria-label="Amount (to the nearest dollar)">
+                                                <input type="text" class="form-control br-0" name="price" placeholder="سعر الكورس" aria-label="Amount (to the nearest shekl)">
                                                 @error('price')
                                                     <div class="invalid-feedback" style="display:block;">{{$message}}</div>
                                                 @enderror
                                             </div>
                                         </div>
+
+                                        <div class="row mb-4">
+                                            <label class="col-md-3 form-label">نسبة المعلم:</label>
+                                            <div class="input-group col-md-9">
+                                                <span class="input-group-text">%</span>
+                                                <input type="text" class="form-control br-0" name="teacher_percentage" placeholder="نسبة المعلم" aria-label="%">
+                                                @error('teacher_percentage')
+                                                    <div class="invalid-feedback" style="display:block;">{{$message}}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-4">
+                                            <label class="col-md-3 form-label">ينتهي بعد :</label>
+                                            <div class="input-group col-md-9">
+                                                <span class="input-group-text">يوم</span>
+                                                <input type="text" class="form-control br-0" name="finnish_after" placeholder="ينتهي بعد" aria-label="">
+                                                @error('finnish_after')
+                                                    <div class="invalid-feedback" style="display:block;">{{$message}}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+
                                         <div class="row mb-4">
                                             <label class="col-md-3 form-label">المعلم :</label>
                                             <div class="col-md-9">

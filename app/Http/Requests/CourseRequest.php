@@ -26,7 +26,9 @@ class CourseRequest extends FormRequest
         return [
             'name' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
-            'price' => 'required',
+            'price' => 'required|numeric',
+            'teacher_percentage' => 'required|numeric',
+            'finnish_after' => 'required|numeric',
             'category_id' => 'required',
         ];
     }
@@ -39,6 +41,11 @@ class CourseRequest extends FormRequest
             'image.image' => 'هذا الحقل يجب ان يكون صورة',
             'image.mimes' => 'هذة الصيغة غير صحيحة',
             'price.required' => 'هذا الحقل مطلوب',
+            'price.numeric' => 'هذا الحقل يجب ان يكون رقم',
+            'teacher_percentage.required' => 'هذا الحقل مطلوب',
+            'teacher_percentage.numeric' => 'هذا الحقل يجب ان يكون رقم',
+            'finnish_after.required' => 'هذا الحقل مطلوب',
+            'finnish_after.numeric' => 'هذا الحقل يجب ان يكون رقم',
             'category_id.required' => 'هذا الحقل مطلوب',
         ];
     }

@@ -48,7 +48,13 @@
                                                                                     السعر</th>
                                                                                 <th
                                                                                     class="bg-transparent border-bottom-0">
+                                                                                    نسبة المعلم</th>
+                                                                                <th
+                                                                                    class="bg-transparent border-bottom-0">
                                                                                     الارباح</th>
+                                                                                <th
+                                                                                    class="bg-transparent border-bottom-0">
+                                                                                    ينهي بعد</th>
                                                                                 <th
                                                                                     class="bg-transparent border-bottom-0">
                                                                                     القسم</th>
@@ -95,7 +101,27 @@
                                                                                                 class="mt-0 mt-sm-3 d-block">
                                                                                                 <h6
                                                                                                     class="mb-0 fs-14 fw-semibold">
+                                                                                                        {{$course->teacher_percentage}} %</h6>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="d-flex">
+                                                                                            <div
+                                                                                                class="mt-0 mt-sm-3 d-block">
+                                                                                                <h6
+                                                                                                    class="mb-0 fs-14 fw-semibold">
                                                                                                         {{$course->purchases->sum('course_price')}} <i class="fa fa-shekel"></i></h6>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="d-flex">
+                                                                                            <div
+                                                                                                class="mt-0 mt-sm-3 d-block">
+                                                                                                <h6
+                                                                                                    class="mb-0 fs-14 fw-semibold">
+                                                                                                        {{$course->finnish_after}} يوم</h6>
                                                                                             </div>
                                                                                         </div>
                                                                                     </td>

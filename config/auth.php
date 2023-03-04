@@ -44,6 +44,14 @@ return [
             'driver' => 'session',
             'provider' => 'admin',
         ],
+        'teacher' => [
+            'driver' => 'session',
+            'provider' => 'teacher',
+        ],
+        'student' => [
+            'driver' => 'session',
+            'provider' => 'student',
+        ],
 
         'api' => [
             'driver' => 'token',
@@ -77,6 +85,14 @@ return [
         'admin' => [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
+        ],
+        'teacher' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Teacher::class,
+        ],
+        'student' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Student::class,
         ],
 
         // 'users' => [

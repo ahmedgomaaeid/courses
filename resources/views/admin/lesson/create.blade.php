@@ -46,7 +46,7 @@
                                             <div class="col-md-9">
                                                 <select name="course_id" class="form-control form-select select2" data-bs-placeholder="القسم الرئسي">
                                                 @foreach ($courses as $course)
-                                                    <option value="{{$course->id}}">{{$course->name}}</option>
+                                                    <option value="{{$course->id}}">{{$course->name}}  / {{$course->steacher->name}}</option>
                                                 @endforeach
                                             </select>
                                             @error('course_id')

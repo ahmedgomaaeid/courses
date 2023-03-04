@@ -39,6 +39,8 @@ class CourseController extends Controller
         $course->name = $request->name;
         $course->image = $file_name;
         $course->price = $request->price;
+        $course->teacher_percentage = $request->teacher_percentage;
+        $course->finnish_after = $request->finnish_after;
         $course->teacher_id = $request->teacher_id;
         $course->category_id = $request->category_id;
         $course->publisher_type = 1;
@@ -54,6 +56,7 @@ class CourseController extends Controller
         $teachers = Teacher::all();
         return view('admin.course.edit', compact('course', 'categories', 'teachers'));
     }
+    
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -71,6 +74,8 @@ class CourseController extends Controller
         }
         $course->name = $request->name;
         $course->price = $request->price;
+        $course->teacher_percentage = $request->teacher_percentage;
+        $course->finnish_after = $request->finnish_after;
         $course->teacher_id = $request->teacher_id;
         $course->category_id = $request->category_id;
         if(!$request->has('status')){

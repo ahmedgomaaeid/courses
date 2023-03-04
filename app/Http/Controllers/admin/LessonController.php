@@ -28,7 +28,9 @@ class LessonController extends Controller
         $lesson = new Lesson();
         $lesson->name = $request->name;
         $lesson->course_id = $request->course_id;
+        $lesson->publisher_type = 0;
         $lesson->video = $file_name;
+        $lesson->type = 0;
         $lesson->status = 1;
         $lesson->save();
         return redirect()->route('get.admin.lesson')->with('success', 'تم اضافة الدرس بنجاح');
@@ -51,6 +53,8 @@ class LessonController extends Controller
         }
         $lesson->name = $request->name;
         $lesson->course_id = $request->course_id;
+        $lesson->publisher_type = 0;
+        $lesson->type = 0;
         if(!$request->has('status')){
             $lesson->status = 0;
         }else{

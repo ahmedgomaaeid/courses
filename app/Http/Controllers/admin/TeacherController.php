@@ -17,7 +17,15 @@ class TeacherController extends Controller
         $teacher = Teacher::find($id);
         $teacher->approved = 1;
         $teacher->save();
-        return redirect()->back()->with('success', 'Teacher Approved Successfully');
+        return redirect()->route('get.admin.teacher.edit',$id)->with('success', 'تم قبول المعلم بنجاح يرجى تحديد الصلاحيات والاقسام');
+    }
+    public function send_money($id)
+    {
+        $teacher = Teacher::find($id);
+        $teacher->received = $teacher->received + $teacher->dues;
+        $teacher->dues = 0;
+        $teacher->save();
+        return redirect()->back()->with('success', 'تم ارسال المبلغ للمعلم بنجاح');
     }
     public function index()
     {
@@ -32,7 +40,7 @@ class TeacherController extends Controller
     public function store(TeacherRequest $request)
     {
         $file_name = '';
-        if($request->hasFile('image')){
+        if($request->hasFile('photo')){
             $file_extension = $request->file('photo')->getClientOriginalExtension();
             $file_name = time() . '.' . $file_extension;
             $request->file('photo')->move('assets/images/teachers', $file_name);
@@ -48,6 +56,12 @@ class TeacherController extends Controller
             $teacher->course_access = 0;
         }else{
             $teacher->course_access = 1;
+        }
+
+        if(!$request->has('live_access')){
+            $teacher->live_access = 0;
+        }else{
+            $teacher->live_access = 1;
         }
 
         $teacher->photo = $file_name;
@@ -90,13 +104,20 @@ class TeacherController extends Controller
         }else{
             $teacher->course_access = 1;
         }
+        if(!$request->has('live_access')){
+            $teacher->live_access = 0;
+        }else{
+            $teacher->live_access = 1;
+        }
         if(!$request->has('status')){
             $teacher->status = 0;
         }else{
             $teacher->status = 1;
         }
         if($request->hasFile('photo')){
-            unlink('assets/images/teachers/' . $teacher->photo);
+            if($teacher->photo != null){
+                unlink('assets/images/teachers/'.$teacher->photo);
+            }
             $file_extension = $request->file('photo')->getClientOriginalExtension();
             $file_name = time() . '.' . $file_extension;
             $request->file('photo')->move('assets/images/teachers', $file_name);

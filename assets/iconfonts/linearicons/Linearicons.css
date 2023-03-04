@@ -143,7 +143,7 @@
 	content: "\e826";
 }
 .lnr-picture:before {
-	content: "\e827";
+	content: "";
 }
 .lnr-book:before {
 	content: "\e828";
@@ -395,7 +395,7 @@
 	content: "\e87a";
 }
 .lnr-move:before {
-	content: "\e87b";
+	content: "";
 }
 .lnr-warning:before {
 	content: "\e87c";

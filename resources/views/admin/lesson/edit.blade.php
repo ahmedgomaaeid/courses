@@ -41,9 +41,9 @@
                                                 <select name="course_id" class="form-control form-select select2" data-bs-placeholder="القسم الرئسي">
                                                 @foreach ($courses as $course)
                                                     @if($course->id == $lesson->course_id)
-                                                        <option value="{{$course->id}}" selected>{{$course->name}}</option>
+                                                        <option value="{{$course->id}}" selected>{{$course->name}} / {{$course->steacher->name}}</option>
                                                     @else
-                                                        <option value="{{$course->id}}">{{$course->name}}</option>
+                                                        <option value="{{$course->id}}">{{$course->name}} / {{$course->steacher->name}}</option>
                                                     @endif
                                                    
                                                 @endforeach

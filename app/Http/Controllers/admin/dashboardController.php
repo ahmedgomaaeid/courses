@@ -15,8 +15,11 @@ class dashboardController extends Controller
         $teachers = Teacher::where('approved', 0)->get();
         $unapp_teachers = Teacher::where('approved', 0)->count();
         $app_teachers = Teacher::where('approved', 1)->count();
+        $teacher_dues = Teacher::where('approved', 1)->orderBy('dues', 'desc')->orderBy('received', 'desc')->get();
         $students = Student::all()->count();
         $price = Purchase::all()->sum('course_price');
-        return view('admin.index', compact('teachers', 'unapp_teachers', 'app_teachers', 'students', 'price'));
+        $dues = Teacher::all()->sum('dues');
+        $received = Teacher::all()->sum('received');
+        return view('admin.index', compact('teachers', 'unapp_teachers', 'app_teachers','teacher_dues', 'students', 'price', 'dues', 'received'));
     }
 }

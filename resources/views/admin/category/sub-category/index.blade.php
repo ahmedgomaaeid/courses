@@ -45,6 +45,9 @@
                                                                                     القسم</th>
                                                                                 <th class="bg-transparent border-bottom-0"
                                                                                     style="width: 5%;">القسم الرئسي</th>
+                                                                                <th
+                                                                                    class="bg-transparent border-bottom-0">
+                                                                                    الحالة</th>
                                                                                 <th class="bg-transparent border-bottom-0"
                                                                                     style="width: 5%;">العمليات</th>
                                                                             </tr>
@@ -56,6 +59,12 @@
                                                                                 
                                                                                 <td>
                                                                                     <div class="d-flex">
+                                                                                    <span class="avatar bradius"
+                                                                                                style="background-image: url(@if($cate->photo == null) {{route('index')}}/assets/images/orders/10.jpg
+                                                                                                @else
+                                                                                                    {{route('index')}}/assets/images/subCategory/{{$cate->photo}}
+                                                                                                @endif
+                                                                                                )"></span>
                                                                                         <div
                                                                                             class="ms-3 mt-0 mt-sm-2 d-block">
                                                                                             <h6
@@ -75,17 +84,22 @@
                                                                                         </div>
                                                                                     </div>
                                                                                 </td>
-                                                                                
+                                                                                <td>
+                                                                                        <div class="d-flex">
+                                                                                            <div
+                                                                                                class="mt-0 mt-sm-3 d-block">
+                                                                                                <h6
+                                                                                                    class="mb-0 fs-14 fw-semibold">
+                                                                                                        {{$cate->status}}</h6>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </td>
                                                                                 <td>
                                                                                     <div class="g-2">
                                                                                         <a class="btn text-primary btn-sm"
                                                                                             data-bs-toggle="tooltip"
                                                                                             data-bs-original-title="Edit" href="{{route('get.admin.sub-category.edit',$cate->id)}}"><span
                                                                                                 class="fe fe-edit fs-14"></span></a>
-                                                                                        <a class="btn text-danger btn-sm"
-                                                                                            data-bs-toggle="tooltip"
-                                                                                            data-bs-original-title="Delete" href="{{route('get.admin.sub-category.delete',$cate->id)}}"><span
-                                                                                                class="fe fe-trash-2 fs-14"></span></a>
                                                                                     </div>
                                                                                 </td>
                                                                             </tr>

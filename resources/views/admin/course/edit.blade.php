@@ -42,6 +42,20 @@
                                             </div>
                                         </div>
                                         <div class="row mb-4">
+                                            <label class="col-md-3 form-label">نسبة المعلم :</label>
+                                            <div class="input-group col-md-9">
+                                                <span class="input-group-text">%</span>
+                                                <input type="text" class="form-control br-0" name="teacher_percentage" placeholder="نسبة المعلم" aria-label="%" value="{{$course->teacher_percentage}}">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4">
+                                            <label class="col-md-3 form-label">ينتهي بعد :</label>
+                                            <div class="input-group col-md-9">
+                                                <span class="input-group-text">يوم</span>
+                                                <input type="text" class="form-control br-0" name="finnish_after" placeholder="ينتهي بعد" aria-label="" value="{{$course->finnish_after}}">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4">
                                             <label class="col-md-3 form-label">المعلم :</label>
                                             <div class="col-md-9">
                                                 <select name="teacher_id" class="form-control form-select select2" data-bs-placeholder="القسم الرئسي">

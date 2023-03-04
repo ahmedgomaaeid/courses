@@ -954,7 +954,7 @@
 .ri-football-fill:before { content: "\ed8e"; }
 .ri-football-line:before { content: "\ed8f"; }
 .ri-footprint-fill:before { content: "\ed90"; }
-.ri-footprint-line:before { content: "\ed91"; }
+.ri-footprint-line:before { content: ""; }
 .ri-forbid-2-fill:before { content: "\ed92"; }
 .ri-forbid-2-line:before { content: "\ed93"; }
 .ri-forbid-fill:before { content: "\ed94"; }
@@ -1175,7 +1175,7 @@
 .ri-italic:before { content: "\ee6b"; }
 .ri-kakao-talk-fill:before { content: "\ee6c"; }
 .ri-kakao-talk-line:before { content: "\ee6d"; }
-.ri-key-2-fill:before { content: "\ee6e"; }
+.ri-key-2-fill:before { content: ""; }
 .ri-key-2-line:before { content: "\ee6f"; }
 .ri-key-fill:before { content: "\ee70"; }
 .ri-key-line:before { content: "\ee71"; }
@@ -1245,7 +1245,7 @@
 .ri-link-unlink:before { content: "\eeb1"; }
 .ri-link:before { content: "\eeb2"; }
 .ri-linkedin-box-fill:before { content: "\eeb3"; }
-.ri-linkedin-box-line:before { content: "\eeb4"; }
+.ri-linkedin-box-line:before { content: ""; }
 .ri-linkedin-fill:before { content: "\eeb5"; }
 .ri-linkedin-line:before { content: "\eeb6"; }
 .ri-links-fill:before { content: "\eeb7"; }

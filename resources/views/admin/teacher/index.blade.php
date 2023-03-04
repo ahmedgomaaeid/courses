@@ -17,7 +17,7 @@
                             @endif
                                 <div class="card">
                                     <div class="card-header">
-                                        <h3 class="card-title mb-0">المعلمين</h3>
+                                        <h3 class="card-title mb-0">المعلمون</h3>
                                     </div>
                                     <div class="card-body pt-4">
                                         <div class="grid-margin">
@@ -54,6 +54,9 @@
                                                                                 <th
                                                                                     class="bg-transparent border-bottom-0">
                                                                                     صلاحية النشر</th>
+                                                                                <th
+                                                                                    class="bg-transparent border-bottom-0">
+                                                                                    صلاحية البث</th>
                                                                                 <th
                                                                                     class="bg-transparent border-bottom-0">
                                                                                     الاقسام</th>
@@ -121,6 +124,16 @@
                                                                                                 <h6
                                                                                                     class="mb-0 fs-14 fw-semibold">
                                                                                                         {{$teacher->course_access}}</h6>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="d-flex">
+                                                                                            <div
+                                                                                                class="mt-0 mt-sm-3 d-block">
+                                                                                                <h6
+                                                                                                    class="mb-0 fs-14 fw-semibold">
+                                                                                                        {{$teacher->live_access}}</h6>
                                                                                             </div>
                                                                                         </div>
                                                                                     </td>

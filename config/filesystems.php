@@ -78,6 +78,18 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
+        'mainCategory' => [
+            'driver' => 'local',
+            'root' => storage_path('assets/images/mainCategory'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+        'subCategory' => [
+            'driver' => 'local',
+            'root' => storage_path('assets/images/subCategory'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
 
         's3' => [
             'driver' => 's3',

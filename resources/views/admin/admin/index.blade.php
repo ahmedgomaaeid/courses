@@ -17,7 +17,7 @@
                             @endif
                                 <div class="card">
                                     <div class="card-header">
-                                        <h3 class="card-title mb-0">المشرفين</h3>
+                                        <h3 class="card-title mb-0">المشرفون</h3>
                                     </div>
                                     <div class="card-body pt-4">
                                         <div class="grid-margin">

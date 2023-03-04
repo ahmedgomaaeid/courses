@@ -24,7 +24,8 @@ class MainCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:255'
+            'name' => 'required|max:255',
+            'photo' => 'required|image|mimes:jpg,jpeg,png,gif'
         ];
     }
 
@@ -33,6 +34,9 @@ class MainCategoryRequest extends FormRequest
         return [
             'name.required' => 'هذا الحقل مطلوب',
             'name.max' => 'الحد الاقصى للحروف 255',
+            'photo.required' => 'هذا الحقل مطلوب',
+            'photo.image' => 'هذا الحقل يجب ان يكون صورة',
+            'photo.mimes' => 'هذا الحقل يجب ان يكون من نوع jpg,jpeg,png,gif',
         ];
     }
 }

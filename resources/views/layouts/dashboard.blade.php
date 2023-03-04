@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 
 <head>
 
@@ -35,7 +35,7 @@
 
 </head>
 
-<body class="app sidebar-mini ltr light-mode">
+<body class="app sidebar-mini rtl light-mode">
 
     <!-- GLOBAL-LOADER -->
     <div id="global-loader">
@@ -93,18 +93,32 @@
                                         class="side-menu__icon fe fe-home"></i><span
                                         class="side-menu__label">لوحة التحكم</span></a>
                             </li>
-                            <li class="slide">
-                                <a class="side-menu__item has-link" data-bs-toggle="slide" href="{{route('get.admin.index')}}"><i
-                                        class="side-menu__icon fa fa-universal-access"></i><span
-                                        class="side-menu__label">المشرفين</span></a>
+                            @if(Auth::guard('admin')->user()->p_admin=='مفعل')
+                                <li class="slide">
+                                    <a class="side-menu__item has-link" data-bs-toggle="slide" href="{{route('get.admin.index')}}"><i
+                                            class="side-menu__icon fa fa-universal-access"></i><span
+                                            class="side-menu__label">المشرفون</span></a>
+                                </li>
+                            @endif
+
+                            <li class="sub-category">
+                                <h3>بطاقات الشحن</h3>
                             </li>
-                            
+                            <li>
+                                <a class="side-menu__item has-link" href="{{route('get.admin.charging-card')}}"><i class="side-menu__icon fa fa-credit-card-alt"></i><span
+                                        class="side-menu__label">بطاقات الشحن</span></a>
+                            </li>
+                            <li>
+                                <a class="side-menu__item has-link" href="{{route('get.admin.shops')}}"><i class="side-menu__icon fe fe-map-pin"></i><span
+                                        class="side-menu__label">اماكن البيع</span></a>
+                            </li>
+
                             <li class="sub-category">
                                 <h3>الاقسام</h3>
                             </li>
                             <li>
                                 <a class="side-menu__item has-link" href="{{route('get.admin.main-category')}}"><i class="side-menu__icon fe fe-package"></i><span
-                                        class="side-menu__label">الاقسام الرئسية</span></a>
+                                        class="side-menu__label">الاقسام الرئيسية</span></a>
                             </li>
                             <li>
                                 <a class="side-menu__item has-link" href="{{route('get.admin.sub-category')}}"><i class="side-menu__icon fe fe-folder"></i><span
@@ -119,26 +133,30 @@
                             </li>
                             <li>
                                 <a class="side-menu__item has-link" href="{{route('get.admin.teacher')}}"><i class="side-menu__icon fa fa-users"></i><span
-                                        class="side-menu__label">المعلمين</span></a>
+                                        class="side-menu__label">المعلمون</span></a>
                             </li>
-                            <li class="sub-category">
-                                <h3>الاشتراكات</h3>
-                            </li>
-                            <li>
-                                <a class="side-menu__item has-link" href="{{route('get.admin.purchase')}}"><i class="side-menu__icon fa fa-money"></i><span
-                                        class="side-menu__label">الاشتراكات</span></a>
-                            </li>
-                            <li class="sub-category">
-                                <h3>الكورسات</h3>
-                            </li>
-                            <li>
-                                <a class="side-menu__item has-link" href="{{route('get.admin.course')}}"><i class="side-menu__icon fa fa-mortar-board"></i><span
-                                        class="side-menu__label">الكورسات</span></a>
-                            </li>
-                            <li>
-                                <a class="side-menu__item has-link" href="{{route('get.admin.lesson')}}"><i class="side-menu__icon fa fa-play-circle"></i><span
-                                        class="side-menu__label">الفيديوهات</span></a>
-                            </li>
+                            @if(Auth::guard('admin')->user()->p_purchase=='مفعل')
+                                <li class="sub-category">
+                                    <h3>الاشتراكات</h3>
+                                </li>
+                                <li>
+                                    <a class="side-menu__item has-link" href="{{route('get.admin.purchase')}}"><i class="side-menu__icon fa fa-money"></i><span
+                                            class="side-menu__label">الاشتراكات</span></a>
+                                </li>
+                            @endif
+                            @if(Auth::guard('admin')->user()->p_course=='مفعل')
+                                <li class="sub-category">
+                                    <h3>الكورسات</h3>
+                                </li>
+                                <li>
+                                    <a class="side-menu__item has-link" href="{{route('get.admin.course')}}"><i class="side-menu__icon fa fa-mortar-board"></i><span
+                                            class="side-menu__label">الكورسات</span></a>
+                                </li>
+                                <li>
+                                    <a class="side-menu__item has-link" href="{{route('get.admin.lesson')}}"><i class="side-menu__icon fa fa-play-circle"></i><span
+                                            class="side-menu__label">الفيديوهات و الاختبارات</span></a>
+                                </li>
+                            @endif
                             <li class="sub-category">
                                 <h3>الخروج</h3>
                             </li>
